@@ -1,6 +1,6 @@
 # FastAPI Advertisement App
 
-This project is a FastAPI-based web application for managing AutoRIA advertisements. It includes user authentication and uses SQLAlchemy for database interactions and Alembic for database migrations.
+This project is a FastAPI-based web application for managing AutoRIA advertisements. It includes user authentication and uses SQLAlchemy for database interactions.
 
 ## Features
 
