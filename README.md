@@ -6,7 +6,6 @@ This project is a FastAPI-based web application for managing AutoRIA advertiseme
 
 - FastAPI for the web framework
 - SQLAlchemy for ORM
-- Alembic for database migrations
 - JWT-based authentication
 - Redis for caching
 
