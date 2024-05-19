@@ -92,21 +92,18 @@ class AutoSpider(scrapy.Spider):
             # Проверяем, нужно ли обновлять данные
             if datetime.utcnow() - existing_ad.updated_at < timedelta(days=1):
                 db.close()
-                return  # Уже есть актуальные данные, пропускаем
-            # Обновляем данные
+                return  
             for key, value in ad_data.items():
                 setattr(existing_ad, key, value)
             existing_ad.updated_at = datetime.utcnow()
             db.commit()
             db.refresh(existing_ad)
         else:
-            # Создаем новое объявление
             ad = Advertisement(**ad_data)
             db.add(ad)
             db.commit()
             db.refresh(ad)
         
-        # Сохранение данных в Redis на 24 часа
         redis_client.setex(f"advertisement:{ad.id}", timedelta(days=1), json.dumps(ad_data))
 
         db.close()
