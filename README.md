@@ -21,7 +21,7 @@ This project is a FastAPI-based web application for managing AutoRIA advertiseme
 1. **Clone the repository:**
 
    ```sh
-   git clone git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/eagle218/autoRiaParser.git
    cd autoRiaParser
    ```
 2. Install the dependencies:
